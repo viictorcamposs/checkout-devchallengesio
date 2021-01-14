@@ -1,0 +1,29 @@
+:root {
+  --gray-1: #a9a9a9;
+  --gray-2: #828282;
+  --gray-3: #4e5150;
+  --gray-4: #4f4f4f;
+  --gray-5: #333333;
+  --orange-1: #f2994a;
+  --orange-2: #f1892d;
+}
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  text-decoration: none;
+  outline: none;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
