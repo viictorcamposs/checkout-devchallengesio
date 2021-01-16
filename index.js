@@ -27,27 +27,22 @@ function handleSubmit(e) {
   e.preventDefault()
 };
 
-function addValue(product) {
-  product === 'vintage' ?
-  qtdOfProduct[0].innerHTML = String(vintageProduct.qtd += 1) :
-  qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd += 1)
-
-  totalValue.innerHTML = String(
-    ((vintageProduct.qtd * vintageProduct.cost) +
-    (leviShoesProduct.qtd * leviShoesProduct.cost)
-    + 19).toFixed(2)
-  )
-};
-function removeValue(product) {
-  if(product === 'vintage') {
-    vintageProduct.qtd === 0 ?
-    qtdOfProduct[0].innerHTML = String(vintageProduct.qtd) :
-    qtdOfProduct[0].innerHTML = String(vintageProduct.qtd -= 1)
+function manipulateProductValue(product, addOrRemove) {
+  if(addOrRemove === 'add') {
+    product === 'vintage' ?
+    qtdOfProduct[0].innerHTML = String(vintageProduct.qtd += 1) :
+    qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd += 1)
   } else {
-    leviShoesProduct.qtd === 0 ?
-    qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd) :
-    qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd -= 1)
-  } 
+    if(product === 'vintage') {
+      vintageProduct.qtd === 0 ?
+      qtdOfProduct[0].innerHTML = String(vintageProduct.qtd) :
+      qtdOfProduct[0].innerHTML = String(vintageProduct.qtd -= 1)
+    } else {
+      leviShoesProduct.qtd === 0 ?
+      qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd) :
+      qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd -= 1)
+    } 
+  }
 
   totalValue.innerHTML = String(
     ((vintageProduct.qtd * vintageProduct.cost) +
