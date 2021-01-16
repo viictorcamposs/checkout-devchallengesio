@@ -44,17 +44,17 @@ function manipulateProductValue(product, addOrRemove) {
     } 
   }
 
-  totalValue.innerHTML = String(
+  totalValue.innerHTML = `$${(
     ((vintageProduct.qtd * vintageProduct.cost) +
     (leviShoesProduct.qtd * leviShoesProduct.cost)
     + 19).toFixed(2)
-  )
+  )}`
 };
 
 qtdOfProduct[0].innerHTML = String(vintageProduct.qtd)
 qtdOfProduct[1].innerHTML = String(leviShoesProduct.qtd)
-totalValue.innerHTML = String(
+totalValue.innerHTML = `$${(
   (vintageProduct.qtd * vintageProduct.cost) +
   (leviShoesProduct.qtd * leviShoesProduct.cost)
   + 19
-)
+)}`
