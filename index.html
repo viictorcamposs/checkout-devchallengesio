@@ -9,20 +9,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    
-    <title>Devchallenges</title>
+    <link rel="stylesheet" href="/index.css">
+
+    <title>Checkout Page by Victor Campos</title>
   </head>
   <body>
     <main>
       <header>
         <h1>checkout</h1>
       </header>
-      <form name="shoppingForm" action="/" method="post">
+      <form name="shoppingForm" id="shoppingForm" 
+        action="/" 
+        method="post"
+        onsubmit="handleSubmit(event)"
+      >
         <article id="shoppingForm">
           <section id="productsForm">
             <div class="productContainer">
               <div class="productImage">
-                <img src="" alt="Product's Image">
+                <img src="/photo1.png" alt="Product's Image">
               </div>
               <div class="productContent">
                 <div class="productInfo">
@@ -33,15 +38,15 @@
                   </p>
                 </div>
                 <div class="shoppingBtn">
-                  <i class="material-icons"></i>
-                  <span>1</span>
-                  <i class="material-icons"></i>
+                  <i onclick="removeValue('vintage')" class="material-icons removeValue">remove</i>
+                  <span class="qtdOfProduct"></span>
+                  <i onclick="addValue('vintage')" class="material-icons">add</i>
                 </div>
               </div>
             </div>
             <div class="productContainer">
               <div class="productImage">
-                <img src="" alt="Product's Image">
+                <img src="/photo2.png" alt="Product's Image">
               </div>
               <div class="productContent">
                 <div class="productInfo">
@@ -52,70 +57,77 @@
                   </p>
                 </div>
                 <div class="shoppingBtn">
-                  <i class="material-icons"></i>
-                  <span>1</span>
-                  <i class="material-icons"></i>
+                  <i onclick="removeValue('leviShoes')" class="material-icons removeValue">remove</i>
+                  <span class="qtdOfProduct"></span>
+                  <i onclick="addValue('leviShoes')" class="material-icons">add</i>
                 </div>
               </div>
             </div>
             <div id="costsContainer">
-              <div class="shippingCost">
+              <div class="costsPrice">
                 <span>shipping</span>
                 <span>$19</span>
               </div>
-              <div class="totalCost">
+              <div class="costsPrice">
                 <span>total</span>
-                <span>$148.98</span>
+                <span id="totalValue"></span>
               </div>
             </div>
           </section>
           <section id="contactForm">
             <div class="contactInfo">
+              <h2>Contact information</h2>
               E-mail
               <div class="infoInput">
                 <span>
-                  <i class="material-icons"></i>
+                  <i class="material-icons">email</i>
                 </span>
                 <input type="email" name="email" id="emailInput"
                   placeholder="Enter your email..."
+                  required
                 />
               </div>
               Phone
               <div class="infoInput">
                 <span>
-                  <i class="material-icons"></i>
+                  <i class="material-icons">phone</i>
                 </span>
                 <input type="number" name="phone" id="phoneInput"
                   placeholder="Enter your phone..."
+                  required
                 />
               </div>
             </div>
-            <div class="shippingAddress">
+            <div class="contactInfo address">
+              <h2>Shipping address</h2>
               Full name
               <div class="infoInput">
                 <span>
-                  <i class="material-icons"></i>
+                  <i class="material-icons">account_circle</i>
                 </span>
                 <input type="text" name="fullName" id="fullNameInput"
                   placeholder="Rodney Cotton"
+                  required
                 />
               </div>
               Address
               <div class="infoInput">
                 <span>
-                  <i class="material-icons"></i>
+                  <i class="material-icons">home</i>
                 </span>
                 <input type="text" name="address" id="addressInput"
                   placeholder="Your address..."
+                  required
                 />
               </div>
               City
               <div class="infoInput">
                 <span>
-                  <i class="material-icons"></i>
+                  <i class="material-icons">location_city</i>
                 </span>
                 <input type="text" name="city" id="cityInput"
                   placeholder="Your city..."
+                  required
                 />
               </div>
               <div class="xHuyACks">
@@ -123,31 +135,40 @@
                   Country
                   <div class="infoInput">
                     <span>
-                      <i class="material-icons"></i>
+                      <i class="material-icons">public</i>
                     </span>
-                    <input type="text" name="country" id="countryInput"
-                      placeholder="Your country..."
-                    />
+                    <select name="country" id="countryInput" placeholder="Your country...">
+                      <option value="">Your Country...</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Haiti">Haiti</option>
+                    </select>
                   </div>
                 </div>
                 <div>
                   Postal code
                   <div class="infoInput">
                     <span>
-                      <i class="material-icons"></i>
+                      <i class="material-icons">markunread_mailbox</i>
                     </span>
                     <input type="text" name="postalCode" id="postalCodeInput"
                       placeholder="Your postal code..."
+                      required
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <input type="checkbox" name="saveInformation" id="saveInformation" />
-            <span>Save this information for next time</span>
+            <div class="checkbox">
+              <input type="checkbox" name="saveInformation" id="saveInformation" />
+              <span>Save this information for next time</span>
+            </div>
           </section>
         </article>
       </form>
+      <div class="submitContainer">
+        <button type="submit" form="shoppingForm">continue</button>
+      </div>
     </main>
 
     <footer>
@@ -156,5 +177,7 @@
         <a href="https://devchallenges.io">DevChallenges.io</a>
       </p>
     </footer>
+
+    <script src="/index.js"></script>
   </body>
 </html>
