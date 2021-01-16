@@ -54,6 +54,7 @@ body {
   main .submitContainer {
     display: flex;
     justify-content: flex-end;
+    margin-top: 1.25rem;
   }
   main button[type="submit"] {
     background: var(--orange-1);
@@ -99,6 +100,8 @@ body {
   #productsForm .productContent {
     display: grid;
     grid-template-rows: 1fr 1fr;
+
+    padding-bottom: 0.3rem;
   }
   #productsForm .productContent h2 {
     font-size: 0.75rem;
@@ -146,6 +149,7 @@ body {
 
     padding: 0.25rem;
     border-radius: 0.25rem;
+    cursor: pointer;
   }
   /* * COSTS CONTAINER STYLE */
   #costsContainer {
@@ -256,5 +260,39 @@ body {
   }
   footer a {
     color: var(--gray-2);
+  }
+}
+@media (min-width: 1000px) {
+  main {
+    padding: 4rem 8rem 0;
+  }
+  main .submitContainer {
+    margin-top: 1.5rem;
+  }
+  article {
+    display: grid;
+    grid-template-columns: 22rem 22rem;
+    column-gap: 4rem;
+  }
+  #productsForm {
+    grid-column-start: 2;
+    /* height: 25rem; */
+  }
+  #contactForm {
+    grid-row-start: 1;
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    padding: 4rem 15rem 0;
+  }
+  article {
+    grid-template-columns: 1fr 1fr;
+  }
+  #contactForm {
+    /* max-width: 29rem; */
+  }
+  #productsForm {
+    /* max-width: 24rem; */
   }
 }
